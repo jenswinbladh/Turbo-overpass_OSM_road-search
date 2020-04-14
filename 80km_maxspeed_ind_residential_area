@@ -1,0 +1,9 @@
+// 80km maxspeed in residential area
+[timeout:225][maxsize:1000000000];
+[bbox:{{bbox}}];
+
+( way[landuse=residential];
+  rel[landuse=residential];
+);
+map_to_area;
+way(area)[maxspeed=80];
