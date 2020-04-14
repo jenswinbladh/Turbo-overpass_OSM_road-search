@@ -1,0 +1,14 @@
+// Tertiary roads w/o maxspeed
+[timeout:225][maxsize:1000000000];
+(
+  way["highway"="tertiary"][maxspeed!~"."]["maxspeed:forward"!~"."]({{bbox}});
+);
+(._;>;);
+out body;
+>;
+
+{{style:
+	way[highway=tertiary]{ color:red; width:4; dashes:8,10; opacity:0.4}
+node
+{ width: 0; opacity: 0.4}
+}}
