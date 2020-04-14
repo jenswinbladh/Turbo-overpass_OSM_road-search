@@ -11,5 +11,5 @@ out body;
 
 {{style:
   way[highway=primary]{ color:red; width:6; dashes:8,10; }
-  way[highway=secondary]{ color:yellow; width:4; dashes:6,8; }
+  way[highway=secondary]{ color:green; width:5; dashes:8,10; }
 }}
