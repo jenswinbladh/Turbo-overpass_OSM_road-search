@@ -1,15 +1,16 @@
 // Primary & Secondary roads w/o maxspeed
 [timeout:225][maxsize:1000000000];
 (
-  {{geocodeArea:Denmark}}->.searchArea;
      way["highway"="primary"][maxspeed!~"."]["maxspeed:forward"!~"."](area.searchArea);
      way["highway"="secondary"][maxspeed!~"."]["maxspeed:forward"!~"."](area.searchArea);
+ ({{bbox}});
 );
 (._;>;);
 out body;
 >;
 
 {{style:
-  way[highway=primary]{ color:red; width:6; dashes:8,10; }
-  way[highway=secondary]{ color:green; width:5; dashes:8,10; }
+  way[highway=primary]{ color:red; width:6; dashes:8,10; opacity:0.4}
+  way[highway=secondary]{ color:green; width:5; dashes:8,10; opacity:0.4}
+  node {width: 0; opacity: 0.4}
 }}
