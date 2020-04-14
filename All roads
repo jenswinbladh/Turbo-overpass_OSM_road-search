@@ -1,0 +1,22 @@
+// All roads w/o maxspeed
+[timeout:225][maxsize:1000000000];
+(
+  way["highway"="primary"][maxspeed!~"."]["maxspeed:forward"!~"."({{bbox}});
+  way["highway"="secondary"][maxspeed!~"."]["maxspeed:forward"!~"."] ({{bbox}});
+  way["highway"="tertiary"][maxspeed!~"."]["maxspeed:forward"!~"."] ({{bbox}});
+  way["highway"="unclassified"][maxspeed!~"."]["maxspeed:forward"!~"."] ({{bbox}});
+  way["highway"="residential"][maxspeed!~"."]["maxspeed:forward"!~"."] ({{bbox}});
+);
+(._;>;);
+out body;
+>;
+
+{{style:
+way[highway=primary]{ color:red; width:9; dashes:3,3; opacity:0.8}
+way[highway=secondary]{ color:green; width:8; dashes:5,5; opacity:0.4}
+way[highway=tertiary]{ color:brown; width:7; dashes:5,5; opacity:0.4}
+way[highway=residential]{ color:black; width:5; dashes:5,5; opacity:0.4}
+way[highway=unclassified]{ color:blue; width:5; dashes:5,5; opacity:0.4}
+node
+{ width: 0; opacity: 0.4}
+}}
